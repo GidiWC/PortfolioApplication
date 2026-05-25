@@ -2,70 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>Gidi Wamaanda | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gidi Wamaanda</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <table width="100%" border="1">
-    <tr>
-      <td width="20%"><img src="logo.jpg" alt="logo" width="60" height="60"></td>
-      <td align="right">
-        <a href="#home">Home</a> &nbsp;&nbsp;
-        <a href="#about">About Me</a> &nbsp;&nbsp;
-        <a href="#contact">Contact Us</a>
-      </td>
-    </tr>
-  </table>
+  <nav>
+    <div class="nav-logo">
+      <img src="logo.jpg" alt="logo">
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-  <!-- HERO IMAGE / VIDEO -->
-  <a name="home"></a>
-  <table width="100%" border="1">
-    <tr>
-      <td height="300" align="center">
-        <img src="myimage.jpeg" alt="Your Image" width="180" height="180">
-      </td>
-    </tr>
-  </table>
+  <section id="home">
+    <img src="myimage.jpeg" alt="Gidi Wamaanda">
+    <h1>Hey, I'm Gidi Wamaanda</h1>
+    <p>IT student at TUT. I build websites and write Java code — still figuring it all out, one project at a time.</p>
+    <a href="#about" class="btn">A bit about me</a>
+  </section>
 
-  <!-- NAME + BIO + CIRCLE IMAGE -->
-  <table width="100%" border="0">
-    <tr>
-      <td width="60%" valign="top">
-        <h1>Gidi Wamaanda</h1>
-        <p><b>My bio</b> - I am a passionate IT student who loves building websites and solving problems through code.</p>
-        <p>I am studying Computer Science at Tshwane University of Technology. I enjoy web development, coding in Java, and learning new technologies.</p>
-      </td>
-      <td width="40%" align="center" valign="middle">
-        <img src="myimage.jpeg" alt="Your Image" width="180" height="180" style="border-radius:50%">
-      </td>
-    </tr>
-  </table>
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I'm studying Computer Science at Tshwane University of Technology. Web development got me hooked — there's something satisfying about writing code and seeing it come to life in a browser.</p>
+        <p>Outside of studying I mess around with Java projects, try to keep up with new tech, and occasionally break things just to fix them again.</p>
+      </div>
+      <img src="myimage.jpeg" alt="Gidi Wamaanda">
+    </div>
+  </section>
 
-  <!-- FOOTER -->
-  <table width="100%" border="1">
-    <tr>
-      <td width="33%" valign="top">
-        <b>Address Here</b><br>
-        123 Hilary Drive, Polokwane<br>
-        South Africa<br><br>
-        <a href="#">T</a> &nbsp;
-        <a href="#">F</a> &nbsp;
-        <a href="#">I</a>
-      </td>
-      <td width="33%" valign="top">
-        <b>Additional Quick Links</b><br><br>
-        <a href="#home">Home</a><br>
-        <a href="#about">About Me</a><br>
-        <a href="#contact">Contact Us</a>
-      </td>
-      <td width="33%" align="center" valign="middle">
-        embed map
-      </td>
-    </tr>
-  </table>
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <h4>Where to find me</h4>
+        <p>123 Hilary Drive, Polokwane</p>
+        <p>South Africa</p>
+        <div class="social-links">
+          <a href="#">Twitter</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Find me on the map</h4>
+        <div class="map-placeholder">Map goes here</div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Gidi Wamaanda</p>
+  </footer>
 
-  <hr>
+  <script>
+    const btn = document.getElementById('hamburger');
+    const links = document.getElementById('navLinks');
+    btn.addEventListener('click', () => {
+      links.classList.toggle('open');
+      btn.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      btn.classList.remove('open');
+    }));
+  </script>
 
- </body>
+</body>
 </html>
